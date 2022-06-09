@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Registro Profesores</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="#"></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+    </nav>
+    <form>
+        <div class="container mt-4">
+            <div class="card border-secondary">
+                <center>
+                    <H2>
+                        <div class="card-header">Consulta profesor</div>
+                    </H2>
+                </center>
+                <div class="card-body">
+                    <form>
+                        <% if (id) { %>
+                            <div class="form-row">
+                                <div class="col">
+                                    <input type="text" value="<%= nombre.nombre %>" class="form-control"
+                                        placeholder="Nombre" readonly>
+                                </div>
+                                <div class="col">
+                                    <input type="text" value="<%= apellido.apellido %>" class="form-control"
+                                        placeholder="Apellido" readonly>
+                                </div>
+
+                                <div class="col">
+                                    <input type="text" value="<%= rfc.rfc %>" class="form-control" placeholder="RFC"
+                                        readonly>
+                                    <br>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-striped text-center mt-4">
+                                <thead>
+                                    <tr class="bg-success text-white">
+                                        <th scope="col">ID-Unidad aprendizaje</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Horas clase</th>
+                                        <th scope="col">Horas taller</th>
+                                        <th scope="col">Horas laboratorio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% unidad.forEach((aprendizaje)=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= aprendizaje.idUnidadAprendizaje %>
+                                            </td>
+                                            <td>
+                                                <%= aprendizaje.nombre %>
+                                            </td>
+                                            <td>
+                                                <%= aprendizaje.horasClase %>
+                                            </td>
+                                            <td>
+                                                <%= aprendizaje.horasTaller %>
+                                            </td>
+                                            <td>
+                                                <%= aprendizaje.horasLaboratorio %>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                            </table>
+                    </form>
+                    <% } %>
+                        <a href="/" class="btn btn-outline-secondary"><i class='bx bx-arrow-back'></i> Regresar</a>
+
+                        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                            crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+                            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                            crossorigin="anonymous"></script>
+                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+                            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                            crossorigin="anonymous"></script>
+</body>
+
+</html>
